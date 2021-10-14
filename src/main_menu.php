@@ -9,7 +9,7 @@ $menu = [
     ],
     [
         'title' => 'Добавить фото',
-        'path' => '/route/gallery/create',
+        'path' => '/route/gallery-create',
         'sort' => '1'
     ]
 ];
