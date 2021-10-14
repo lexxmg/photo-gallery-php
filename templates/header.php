@@ -10,16 +10,23 @@
 
     <title>Photo gallery</title>
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/header.css">
 
-    <link rel="stylesheet" href="lib/slick/slick-theme.css">
-    <link rel="stylesheet" href="lib/slick/slick.css">
+    <link rel="stylesheet" href="/lib/slick/slick-theme.css">
+    <link rel="stylesheet" href="/lib/slick/slick.css">
 
-    <script src="lib/jQuery/jquery-3.5.1.min.js" defer></script>
-    <script src="lib/slick/slick.min.js" defer></script>
-    <script src="js/script.js" defer></script>
+    <script src="/lib/jQuery/jquery-3.5.1.min.js" defer></script>
+    <script src="/lib/slick/slick.min.js" defer></script>
+    <script src="/js/script.js" defer></script>
   </head>
 
   <body>
+    <header class="header">
+      <nav class="nav fixed-container">
+        <?php require($_SERVER['DOCUMENT_ROOT'] . '/templates/menu.php')?>
+      </nav>
+    </header>
+
     <div class="fixed-container">
