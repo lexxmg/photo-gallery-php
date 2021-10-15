@@ -1,0 +1,44 @@
+.gellary-title {
+  margin: 15px 0;
+
+  text-align: center;
+}
+
+.gallery__form {
+
+}
+
+.gallety__inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallety__card {
+
+}
+
+.gallety-card {
+  width: calc(1024px / 3);
+  min-height: 400px;
+
+  padding: 5px;
+
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.gallety-card__input {
+
+}
+
+.gallety-card__img {
+  display: block;
+
+  height: 400px;
+
+  object-fit: cover;
+}
+
+.gallety-card__date {
+
+}
