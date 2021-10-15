@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/gallery-create.css">
 
     <link rel="stylesheet" href="/lib/slick/slick-theme.css">
     <link rel="stylesheet" href="/lib/slick/slick.css">

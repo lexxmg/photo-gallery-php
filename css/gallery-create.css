@@ -1,0 +1,79 @@
+.gellery-create-tiile {
+  text-align: center;
+}
+
+.gellery-create__form {
+  margin: 50px 0 0 0;
+}
+
+.gellery-create__input-wrapper {
+  position: relative;
+
+  margin: 0 auto;
+
+  width: 500px;
+  padding: 15px 3px;
+
+  border: 1px solid black;
+  border-radius: 5px;
+
+  text-align: center;
+}
+
+/* .gellery-create__input-wrapper:hover {
+  background-color: green;
+} */
+
+.gellery-create__input {
+
+}
+
+.gellery-create__label {
+  position: absolute;
+  top: -0.8em;
+  left: 30px;
+
+  padding: 0 2px;
+
+  background-color: #f9f9f9;
+}
+
+.gellery-create__error {
+  display: block;
+
+  margin: 5px 0 0 0;
+
+  font-size: 18px;
+
+  color: red;
+}
+
+.gellery-create__btn {
+  display: block;
+
+  width: 500px;
+  height: 50px;
+
+  margin: 10px auto 0;
+
+  border: 1px solid blue;
+  border-radius: 5px;
+
+  background-color: blue;
+
+  font-size: 20px;
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: background-color .15s, color .15s;
+}
+
+.gellery-create__btn:hover {
+  background-color: transparent;
+
+  color: blue;
+
+  transition: background-color .15s, color .15s;
+}
