@@ -48,6 +48,16 @@
   color: red;
 }
 
+.gellery-create__success {
+  display: block;
+
+  margin: 5px 0 0 0;
+
+  font-size: 18px;
+
+  color: green;
+}
+
 .gellery-create__btn {
   display: block;
 

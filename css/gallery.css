@@ -11,6 +11,8 @@
 .gallety__inner {
   display: flex;
   flex-wrap: wrap;
+
+  margin: 0 -10px;
 }
 
 .gallety__card {
@@ -18,10 +20,13 @@
 }
 
 .gallety-card {
-  width: calc(1024px / 3);
-  min-height: 400px;
+  min-height: 200px;
 
   padding: 5px;
+}
+
+.gallety-card__wrapper {
+  padding: 0 5px;
 
   border: 1px solid black;
   border-radius: 5px;
@@ -34,7 +39,8 @@
 .gallety-card__img {
   display: block;
 
-  height: 400px;
+  width: calc(1024px / 3 - 19px);
+  height: 360px;
 
   object-fit: cover;
 }

@@ -9,6 +9,10 @@
     <?php if ($error): ?>
         <span class="gellery-create__error"><?=$error?></span>
     <?php endif; ?>
+
+    <?php if ($success): ?>
+        <span class="gellery-create__success"><?=$success?></span>
+    <?php endif; ?>
   </div>
 
   <button class="gellery-create__btn" name="upload">Загрузить</button>
