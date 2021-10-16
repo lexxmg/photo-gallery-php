@@ -33,7 +33,7 @@
 }
 
 .gallety-card__input {
-
+  
 }
 
 .gallety-card__img {
@@ -47,4 +47,24 @@
 
 .gallety-card__date {
 
+}
+
+.gallery__wrapper-btn {
+  display: flex;
+
+  margin: 10px 0;
+}
+
+.gallery__label {
+
+}
+
+.gallery__input {
+
+}
+
+.gallery__btn {
+  display: block;
+
+  margin: 0 0 0 10px;
 }

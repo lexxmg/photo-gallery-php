@@ -24,7 +24,7 @@ if ( isset($_POST['upload']) ) {
             foreach ($_FILES['file']['type'] as $key => $item) {
                 if ($_FILES['file']['size'][$key] > MAX_SIZE) {
                     $success = '';
-                    $error = 'Размер файла не може привышать 2MB';
+                    $error = 'Размер файла не може привышать 2Mb';
                     break;
                 }
 
@@ -61,10 +61,16 @@ if ( isset($_POST['upload']) ) {
 }
 
 if ( isset($_POST['delete']) ) {
-    foreach ($_POST as $i => $item) {
+    if ( isset($_POST['deleteAll']) ) {
         foreach ( preg_grep('/^([^.])/', scandir($pathToUpload) ) as $key => $value ) {
-            if ($i === $value) {
-                unlink($pathToUpload . '/' . $value);
+            unlink($pathToUpload . '/' . $value);
+        }
+    } else {
+        foreach ($_POST as $i => $item) {
+            foreach ( preg_grep('/^([^.])/', scandir($pathToUpload) ) as $key => $value ) {
+                if ($i === $value) {
+                    unlink($pathToUpload . '/' . $value);
+                }
             }
         }
     }
