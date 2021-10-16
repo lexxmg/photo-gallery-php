@@ -17,6 +17,7 @@
             </div>
         <?php endforeach; ?>
     </div>
+    
     <div class="gallery__wrapper-btn">
       <label class="gallery__label">Удалить всё:
         <input class="gallery__input" type="checkbox" name="deleteAll">
