@@ -87,3 +87,9 @@
 
   transition: background-color .15s, color .15s;
 }
+
+.gellery-create__btn:disabled {
+  opacity: .5;
+
+  cursor: no-drop;
+}
