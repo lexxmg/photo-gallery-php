@@ -13,8 +13,8 @@ foreach (VALID_FORMAT as $key => $value) {
 $success = '';
 $error = [];
 
-var_dump( !empty($error) );
-var_dump( isset($error) );
+// var_dump( !empty($error) );
+// var_dump( isset($error) );
 
 if ( isset($_POST['upload']) ) {
     //echo 'была нажата кнопка';
@@ -25,24 +25,28 @@ if ( isset($_POST['upload']) ) {
         } else if ( count($_FILES['file']['name']) > MAX_COUNT ) {
             $error[] = 'Можно загрузить максимум ' . MAX_COUNT . ' файлов!';
         } else {
-            foreach ($_FILES['file']['type'] as $i => $item) {
+            foreach ($_FILES['file']['name'] as $i => $item) {
+                $finfo = finfo_open(FILEINFO_MIME_TYPE);
+                $type =  finfo_file($finfo, $_FILES['file']['tmp_name'][$i]);
+                finfo_close($finfo);
+
                 if ($_FILES['file']['size'][$i] > MAX_SIZE) {
                     $success = '';
-                    $error[] = 'Размер файла не може привышать 2Mb ' . $_FILES['file']['name'][$i];
+                    $error[] = 'Размер файла не може привышать 2Mb ' . $item;
                     //break;
                 }
 
                 foreach (VALID_FORMAT as $j => $value) {
                     $err = true;
 
-                    if ($item === $value) {
+                    if ($type === $value) {
                         $err = false;
                         break;
                     }
                 }
 
                 if ($err) {
-                    $error[] = 'Не допустимый формат файла! ' . $_FILES['file']['name'][$i];
+                    $error[] = 'Не допустимый формат файла! ' . $item;
                 }
             }
         }
