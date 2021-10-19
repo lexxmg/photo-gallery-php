@@ -6,16 +6,17 @@ const form = document.querySelector('.gellery-create__form'),
 
 form.addEventListener('submit', event => {
   event.preventDefault();
-  //const formData = new FormData(form);
+  const formData = new FormData(form);
   submitBtn.disabled = true;
-  console.log(new FormData(form));
+  //console.log(formData.get('file[]'));
 
   fetch('/php/get-files.php', {
     method: 'POST',
-    body: new FormData(form)
+    body: formData
   }).then( res => res.json() )
     .then(data => {
       console.log(data);
+      form.reset();
       submitBtn.disabled = false;
     });
 });
