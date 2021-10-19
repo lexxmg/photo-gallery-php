@@ -4,12 +4,6 @@ const MAX_SIZE = 2 * 1024 * 1024;
 const MAX_COUNT = 6;
 const VALID_FORMAT = ['image/jpeg', 'image/png', 'image/jpg'];
 
-$acceptStr = '';
-
-foreach (VALID_FORMAT as $key => $value) {
-    $acceptStr = $acceptStr . $value . ', ';
-}
-
 $success = '';
 $error = [];
 
@@ -81,7 +75,7 @@ if ( isset($_POST['upload']) ) {
       id="file"
       type="file"
       name="file[]"
-      accept="<?=substr($acceptStr, 0, -2)?>"
+      accept="<?=implode(', ', VALID_FORMAT)?>"
       multiple
     >
     <label class="gellery-create__label" for="file">Выберете файл</label>
