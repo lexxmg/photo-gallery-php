@@ -1,5 +1,5 @@
 
-<h1 class="gellery-create-tiile">Загрузить фото</h1>
+<!-- <h1 class="gellery-create-tiile">Загрузить фото</h1> -->
 
 <form class="gellery-create__form" name="myForm" action="" method="post" enctype="multipart/form-data">
   <div class="gellery-create__input-wrapper">
