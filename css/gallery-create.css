@@ -93,3 +93,7 @@
 
   cursor: no-drop;
 }
+
+.hide {
+  display: none;
+}
