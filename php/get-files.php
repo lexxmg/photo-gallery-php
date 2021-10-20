@@ -28,7 +28,8 @@ $arr = [];
 foreach ($arrFiles as $key => $value) {
   $arr[] = [
     'name' => $value,
-    'date' => date('m.d.Y H:i:s' ,filectime($_SERVER['DOCUMENT_ROOT'] . '/upload/' . $value) )
+    'date' => date('m.d.Y H:i:s' ,filectime($_SERVER['DOCUMENT_ROOT'] . '/upload/' . $value) ),
+    'size' => filesize( $_SERVER['DOCUMENT_ROOT'] . '/upload/' . $value )
   ];
 }
 

@@ -101,12 +101,16 @@ function getAndPasteImages() {
   getData('/php/get-files.php').then(data => {
     galletyInner.innerHTML = '';
 
+    function SortArray(x, y){
+      return x.name.localeCompare(y.name);
+    }
+
     if (data.length === 0) {
       galletyInner.insertAdjacentHTML('beforeEnd', `
         <p style="width: 100%; text-align: center;">Нет загруженных файлов</p>
       `);
     } else {
-      data.forEach((item, i) => {
+      data.sort(SortArray).forEach((item, i) => {
         galletyInner.insertAdjacentHTML('beforeEnd', `
           <div class="gallety__card gallety-card">
             <div class="gallety-card__wrapper">
