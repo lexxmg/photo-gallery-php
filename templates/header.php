@@ -25,10 +25,4 @@
   </head>
 
   <body>
-    <header class="header">
-      <nav class="nav fixed-container">
-        <?php require($_SERVER['DOCUMENT_ROOT'] . '/templates/menu.php')?>
-      </nav>
-    </header>
-
     <div class="fixed-container">

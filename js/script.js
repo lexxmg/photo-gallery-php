@@ -103,7 +103,7 @@ function getAndPasteImages() {
 
     if (data.length === 0) {
       galletyInner.insertAdjacentHTML('beforeEnd', `
-        <p style="width: 100%; text-align: center;">Нет загруженных фото</p>
+        <p style="width: 100%; text-align: center;">Нет загруженных файлов</p>
       `);
     } else {
       data.forEach((item, i) => {
