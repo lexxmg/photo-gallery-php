@@ -121,7 +121,7 @@ function getAndPasteImages() {
               <div class="gallety-card__inner">
                 <time class="gallety-card__date">${item.date}</time>
 
-                <span class="gallety-card__size">${sizeConvert(item.size)}</span>
+                <span class="gallety-card__size">${sizeConvert(item.size, 1)}</span>
               </div>
             </div>
           </div>
@@ -131,11 +131,14 @@ function getAndPasteImages() {
   });
 }
 
-function sizeConvert(bytes) {
-  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+function sizeConvert(bytes, decimals = 2) {
+    if (bytes === 0) return '0 Bytes';
 
-  if (bytes == 0) return '0 Byte';
-  const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 
-  return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 }
