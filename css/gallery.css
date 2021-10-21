@@ -45,8 +45,18 @@
   object-fit: cover;
 }
 
+.gallety-card__inner {
+  display: flex;
+}
+
 .gallety-card__date {
 
+}
+
+.gallety-card__size {
+  display: block;
+
+  margin: 0 0 0 30px;
 }
 
 .gallery__wrapper-btn {

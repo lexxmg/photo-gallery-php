@@ -118,11 +118,24 @@ function getAndPasteImages() {
 
               <img class="gallety-card__img" src="/upload/${item.name}" alt="${item.name}">
 
-              <time class="gallety-card__date">${item.date}</time>
+              <div class="gallety-card__inner">
+                <time class="gallety-card__date">${item.date}</time>
+
+                <span class="gallety-card__size">${sizeConvert(item.size)}</span>
+              </div>
             </div>
           </div>
         `);
       });
     }
   });
+}
+
+function sizeConvert(bytes) {
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+
+  if (bytes == 0) return '0 Byte';
+  const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+
+  return Math.round(bytes / Math.pow(1024, i), 2) + ' ' + sizes[i];
 }
