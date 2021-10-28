@@ -15,6 +15,8 @@ getAndPasteImages();
 form.addEventListener('submit', event => {
   event.preventDefault();
   const formData = new FormData(form);
+  formData.append('upload', 1);
+
   submitBtn.disabled = true;
   //console.log(formData.get('file[]'));
 
@@ -55,6 +57,7 @@ formGallery.addEventListener('submit', event => {
   event.preventDefault();
 
   const formData = new FormData(formGallery);
+  formData.append('delete', 1);
 
   deleteBtn.disabled = true;
 
@@ -92,7 +95,9 @@ function sendData(url, formData) {
       return res;
     }
   }).then(res => res.json() )
-    .then(data => data);
+    .then(data => {
+      return data;
+    });
 }
 
 function getData(url) {
@@ -125,7 +130,7 @@ function getAndPasteImages() {
 
     if (data.length === 0) {
       deleteWrapper.classList.add('hide');
-      
+
       galletyInner.insertAdjacentHTML('beforeEnd', `
         <p style="width: 100%; text-align: center;">Нет загруженных файлов</p>
       `);

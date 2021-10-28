@@ -8,7 +8,7 @@ $error = [];
 
 $pathToUpload = $_SERVER['DOCUMENT_ROOT'] . '/upload';
 
-// var_dump( !empty($error) );
+//var_dump($_POST);
 // var_dump( isset($error) );
 
 if ( isset($_POST['upload']) ) {
