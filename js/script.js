@@ -66,17 +66,17 @@ formGallery.addEventListener('submit', event => {
   });
 });
 
-// formGallery.addEventListener('change', event => {
-//   const formElemrnts = formGallery.elements;
-//
-//   deleteBtn.disabled = true;
-//
-//   for (let i = 0; i < formElemrnts.length; i++) {
-//     if (formElemrnts[i].type === 'checkbox' && formElemrnts[i].checked) {
-//       deleteBtn.disabled = false;
-//     }
-//   }
-// });
+formGallery.addEventListener('change', event => {
+  const formElemrnts = formGallery.elements;
+
+  deleteBtn.disabled = true;
+
+  for (let i = 0; i < formElemrnts.length; i++) {
+    if (formElemrnts[i].type === 'checkbox' && formElemrnts[i].checked) {
+      deleteBtn.disabled = false;
+    }
+  }
+});
 
 
 function sendData(url, formData) {
