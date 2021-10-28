@@ -14,7 +14,9 @@ getAndPasteImages();
 
 form.addEventListener('submit', event => {
   event.preventDefault();
+
   const formData = new FormData(form);
+  formData.append('file[]', event.target.file);
   formData.append('upload', 1);
 
   submitBtn.disabled = true;
@@ -55,6 +57,8 @@ form.addEventListener('submit', event => {
 
 formGallery.addEventListener('submit', event => {
   event.preventDefault();
+
+  //console.log(event.target);
 
   const formData = new FormData(formGallery);
   formData.append('delete', 1);
