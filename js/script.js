@@ -4,6 +4,7 @@
 const form = document.querySelector('.gellery-create__form'),
       formGallery = document.querySelector('.gallery__form'),
       submitBtn = document.querySelector('.gellery-create__btn'),
+      deleteBtn = document.querySelector('.gallery__btn'),
       inputWrapper = document.querySelector('.gellery-create__input-wrapper'),
       galletyInner = document.querySelector('.gallety__inner'),
       success = document.querySelector('.gellery-create__success');
@@ -29,10 +30,6 @@ form.addEventListener('submit', event => {
           <span class="gellery-create__error">${item}</span>
         `);
       });
-
-      setTimeout(() => {
-        removeAllElements( document.querySelectorAll('.gellery-create__error') );
-      }, 5000);
     }
 
     if (res.success) {
@@ -56,11 +53,27 @@ formGallery.addEventListener('submit', event => {
 
   const formData = new FormData(formGallery);
 
+  deleteBtn.disabled = true;
+
   sendData('/php/get-files.php', formData).then(res => {
     form.reset();
 
     getAndPasteImages();
+
+    deleteBtn.disabled = false;
   });
+});
+
+formGallery.addEventListener('change', event => {
+  const formElemrnts = formGallery.elements;
+
+  deleteBtn.disabled = true;
+
+  for (let i = 0; i < formElemrnts.length; i++) {
+    if (formElemrnts[i].type === 'checkbox' && formElemrnts[i].checked) {
+      deleteBtn.disabled = false;
+    }
+  }
 });
 
 

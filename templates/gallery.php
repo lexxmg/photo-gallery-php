@@ -11,6 +11,6 @@
         <input class="gallery__input" type="checkbox" name="deleteAll">
       </label>
 
-      <button class="gallery__btn" name="delete">удалить</button>
+      <button class="gallery__btn" name="delete" disabled>удалить</button>
     </div>
 </form>
