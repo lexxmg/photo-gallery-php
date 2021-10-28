@@ -4,6 +4,7 @@
 const form = document.querySelector('.gellery-create__form'),
       formGallery = document.querySelector('.gallery__form'),
       submitBtn = document.querySelector('.gellery-create__btn'),
+      deleteWrapper = document.querySelector('.gallery__wrapper-btn'),
       deleteBtn = document.querySelector('.gallery__btn'),
       inputWrapper = document.querySelector('.gellery-create__input-wrapper'),
       galletyInner = document.querySelector('.gallety__inner'),
@@ -59,9 +60,10 @@ formGallery.addEventListener('submit', event => {
 
   sendData('/php/get-files.php', formData).then(res => {
     form.reset();
-    //formGallery.reset();
+    formGallery.reset();
 
     getAndPasteImages();
+    removeAllElements( document.querySelectorAll('.gellery-create__error') );
     //disabledInput(formGallery, 'deleteAll');
   });
 });
@@ -112,14 +114,6 @@ function removeAllElements(elements) {
   return true;
 }
 
-// function disabledInput(form, inputName) {
-//   const formElements = form.elements;
-//
-//   console.log(formElements.length);
-//
-//   if (formElements.length > 2) form[inputName].disabled = false;
-//   form[inputName].disabled = true;
-// }
 
 function getAndPasteImages() {
   getData('/php/get-files.php').then(data => {
@@ -130,10 +124,14 @@ function getAndPasteImages() {
     }
 
     if (data.length === 0) {
+      deleteWrapper.classList.add('hide');
+      
       galletyInner.insertAdjacentHTML('beforeEnd', `
         <p style="width: 100%; text-align: center;">Нет загруженных файлов</p>
       `);
     } else {
+      deleteWrapper.classList.remove('hide');
+
       data.sort(SortArray).forEach((item, i) => {
         galletyInner.insertAdjacentHTML('beforeEnd', `
           <div class="gallety__card gallety-card">
