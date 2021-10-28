@@ -40,6 +40,8 @@ form.addEventListener('submit', event => {
 
       getAndPasteImages();
 
+      //disabledInput(formGallery, 'deleteAll');
+
       setTimeout(() => {
         success.classList.add('hide');
       }, 3000);
@@ -57,24 +59,24 @@ formGallery.addEventListener('submit', event => {
 
   sendData('/php/get-files.php', formData).then(res => {
     form.reset();
+    //formGallery.reset();
 
     getAndPasteImages();
-
-    deleteBtn.disabled = false;
+    //disabledInput(formGallery, 'deleteAll');
   });
 });
 
-formGallery.addEventListener('change', event => {
-  const formElemrnts = formGallery.elements;
-
-  deleteBtn.disabled = true;
-
-  for (let i = 0; i < formElemrnts.length; i++) {
-    if (formElemrnts[i].type === 'checkbox' && formElemrnts[i].checked) {
-      deleteBtn.disabled = false;
-    }
-  }
-});
+// formGallery.addEventListener('change', event => {
+//   const formElemrnts = formGallery.elements;
+//
+//   deleteBtn.disabled = true;
+//
+//   for (let i = 0; i < formElemrnts.length; i++) {
+//     if (formElemrnts[i].type === 'checkbox' && formElemrnts[i].checked) {
+//       deleteBtn.disabled = false;
+//     }
+//   }
+// });
 
 
 function sendData(url, formData) {
@@ -109,6 +111,15 @@ function removeAllElements(elements) {
 
   return true;
 }
+
+// function disabledInput(form, inputName) {
+//   const formElements = form.elements;
+//
+//   console.log(formElements.length);
+//
+//   if (formElements.length > 2) form[inputName].disabled = false;
+//   form[inputName].disabled = true;
+// }
 
 function getAndPasteImages() {
   getData('/php/get-files.php').then(data => {

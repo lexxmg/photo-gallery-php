@@ -7,7 +7,7 @@
       id="file"
       type="file"
       name="file[]"
-      accept="<?=implode(', ', VALID_FORMAT)?>"
+      accept="<?//=implode(', ', VALID_FORMAT)?>"
       multiple
     >
     <label class="gellery-create__label" for="file">Выберете файл</label>

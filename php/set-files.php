@@ -32,16 +32,7 @@ if ( isset($_POST['upload']) ) {
                     //break;
                 }
 
-                foreach (VALID_FORMAT as $j => $value) {
-                    $err = true;
-
-                    if ($type === $value) {
-                        $err = false;
-                        break;
-                    }
-                }
-
-                if ($err) {
+                if ( !in_array($type, VALID_FORMAT, true) ) {
                     $error[] = 'Не допустимый формат файла! ' . $item;
                 }
             }
