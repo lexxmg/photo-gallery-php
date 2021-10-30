@@ -15,12 +15,16 @@ getAndPasteImages();
 form.addEventListener('submit', event => {
   event.preventDefault();
 
+  //console.log(form.file.value);
+
   const formData = new FormData(form);
-  formData.append('file[]', event.target.file);
-  formData.append('upload', 1);
+  //console.log([...formData]);
+  //formData.append('file[]', event.target.file);
+  formData.append('upload', '');
+
+  //console.log([...formData]);
 
   submitBtn.disabled = true;
-  //console.log(formData.get('file[]'));
 
   sendData('/php/set-files.php', formData).then(res => {
     form.reset();
