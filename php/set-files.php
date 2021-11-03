@@ -1,5 +1,6 @@
 
 <?php
+header('Access-Control-Allow-Origin: *');
 
 require($_SERVER['DOCUMENT_ROOT'] . '/src/const.php');
 
