@@ -14,8 +14,9 @@ $pathToUpload = $_SERVER['DOCUMENT_ROOT'] . '/upload';
 
 if ( isset($_POST['upload']) ) {
     //sleep(5);
-    //echo 'была нажата кнопка';
-    //var_dump($_FILES['file']);
+    // echo 'была нажата кнопка';
+    // var_dump($_FILES['file']);
+    // var_dump($_POST);
     if ( !empty($_FILES['file']['name']) ) {
         if ( $_FILES['file']['name'][0] === '' ) {
             $error[] = 'Нужно выбрать хотя бы один файл!';
